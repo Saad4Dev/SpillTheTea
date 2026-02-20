@@ -1,0 +1,62 @@
+.heading {
+  font-family: 'Clash Display', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.body-text {
+  font-family: 'Satoshi', system-ui, sans-serif;
+}
+
+.heading.glow {
+  text-shadow:
+    0 0 12px rgba(255, 105, 180, 0.45),
+    0 0 28px rgba(255, 105, 180, 0.25);
+}
+
+.emoji-bg { background: linear-gradient(135deg, #f6d365, #fda085); }
+.emoji-bg-2 { background: linear-gradient(135deg, #84fab0, #8fd3f4); }
+.emoji-bg-3 { background: linear-gradient(135deg, #a6c1ee, #fbc2eb); }
+.emoji-bg-4 { background: linear-gradient(135deg, #ff9a9e, #fad0c4); }
+.emoji-bg-5 { background: linear-gradient(135deg, #ffc3a0, #ffafbd); }
+
+.float { animation: float 3s ease-in-out infinite; }
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.react {
+  background: rgba(0,0,0,0.25);
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.react:hover { transform: scale(1.15); }
+
+.trending-card {
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.trending-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(255, 105, 180, 0.25);
+}
+
+#teaModal > div {
+  animation: pop .2s ease-out;
+}
+
+@keyframes pop {
+  from { transform: scale(.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+/* Tea Wall hover glow */
+#teaContainer > div {
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+#teaContainer > div:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 14px 40px rgba(255, 105, 180, 0.35);
+  background: linear-gradient(135deg, rgba(255,105,180,0.12), rgba(0,0,0,0.3));
+}

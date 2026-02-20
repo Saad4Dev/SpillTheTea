@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spill The Tea — Anonymous Tea Wall</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=satoshi@400,500&display=swap">
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<!-- Tea Modal -->
+ 
+<div id="teaModal" class="fixed inset-0 hidden items-center justify-center bg-black/70 backdrop-blur z-50">
+  <div class="bg-[#0f0f0f] border border-pink-600/40 rounded-2xl p-6 max-w-lg w-[90%] relative shadow-2xl">
+    
+    <button id="closeModal" class="absolute top-3 right-3 text-gray-400 hover:text-white text-xl">✖</button>
+    
+    <div id="modalEmoji" class="text-5xl mb-3">🍵</div>
+    <p id="modalText" class="body-text text-lg mb-4"></p>
+
+    <div class="flex gap-4">
+      <button id="modalHeart" class="react">❤️ 0</button>
+      <button id="modalLaugh" class="react">😂 0</button>
+      <button id="modalFire" class="react">🔥 0</button>
+    </div>
+  </div>
+</div>
+
+<body class="bg-[#0A0A0A] text-white min-h-screen overflow-x-hidden">
+
+  <!-- Floating Emojis -->
+  <div class="fixed top-10 left-10 text-4xl opacity-20 float">🍵</div>
+  <div class="fixed top-1/4 right-20 text-5xl opacity-20 float" style="animation-delay:.4s">🔥</div>
+  <div class="fixed bottom-20 left-1/4 text-6xl opacity-20 float" style="animation-delay:.8s">👀</div>
+
+  <div class="max-w-6xl mx-auto px-4 py-10 relative z-10">
+
+    <header class="text-center mb-12">
+      <h1 class="heading glow text-6xl md:text-8xl mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-pink-600">
+        Spill The Tea
+      </h1>
+
+      <p class="body-text text-gray-300 mb-6">
+        Drop your truth bombs. Sip the juiciest gossip. All anonymous, all chaotic.
+      </p>
+
+      <button id="spillBtn" class="heading px-10 py-4 text-lg rounded-full bg-gradient-to-r from-pink-600 to-red-700 hover:scale-105 transition-all shadow-lg">
+        Pour The Tea 🫖
+      </button>
+
+      <div class="mt-6 flex justify-center gap-6 text-sm text-gray-400">
+        <span id="teaCount">0 teas spilled</span>
+        <span id="reactionCount">0 reactions</span>
+      </div>
+    </header>
+
+    <section id="spillSection" class="hidden mb-10 p-6 bg-white/5 backdrop-blur rounded-xl border border-pink-700/40 shadow-2xl">
+      <h2 id="questionText" class="heading text-xl mb-4"></h2>
+      <textarea id="answerInput" maxlength="220" class="body-text w-full p-4 rounded bg-black/60 border border-pink-700/40 mb-3 outline-none"></textarea>
+      <div class="flex justify-between">
+        <span id="charCount" class="body-text text-sm text-gray-400">0 / 220</span>
+        <div class="flex gap-3">
+          <button id="submitBtn" class="heading px-6 py-2 bg-green-600 rounded">Submit</button>
+          <button id="nextQuestionBtn" class="heading px-6 py-2 bg-gray-700 rounded">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h3 class="heading text-xl mb-4 text-pink-400">🔥 Trending Right Now</h3>
+      <div id="trendingRow" class="flex gap-4 overflow-x-auto pb-2"></div>
+    </section>
+
+    <section class="bg-white/5 backdrop-blur rounded-2xl p-6 border border-pink-700/30">
+      <h2 class="heading text-3xl mb-6 text-center text-pink-400">The Tea Wall 💧</h2>
+      <div id="teaContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <footer class="body-text text-center text-gray-500 mt-16 text-sm">
+      Built to spill. Stay chill.
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
